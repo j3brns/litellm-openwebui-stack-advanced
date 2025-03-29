@@ -1,7 +1,6 @@
-# RPi Open LLM API Gateway for Home and leisure
+# Open LLM API Gateway and ptrivate GUI for Home and leisure
 
-
-## Semi Advanced LiteLLM Proxy with Open WebUI chat front end Docker Based Builder 
+## Semi Advanced LiteLLM Proxy with Open WebUI and Docker Based Builder -for RPi
 
 ### Includes hardening, optimisation, validation, prompt reporting, analytics + Guardrails
 
