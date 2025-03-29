@@ -1,5 +1,7 @@
-# LiteLLM Proxy with Open WebUI, plus some hardening metrics and Guardrails
-## Home and leisure - Enterprise LLM API Gateway for Home and Professional Use
+# More complex Rpi4+ bootstrap of an extended LiteLLM Proxy and the Open WebUI
+## --plus some hardening & prompt metrics + Guardrails
+
+## Home and leisure - Enterprise LLM API Gateway for Home and soho Use
 ### If it all seems too complex - try my simpler Bootstrap version
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
