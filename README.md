@@ -1,23 +1,24 @@
-# LiteLLM Proxy with Open WebUI
-## Enterprise-grade LLM API Gateway for Home and Professional Use
+# LiteLLM Proxy with Open WebUI, plus some hardening metrics and Guardrails
+## Home and leisure - Enterprise LLM API Gateway for Home and Professional Use
+### If it all seems too complex - try my simpler Bootstrap version
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://img.shields.io/badge/docker-powered-blue.svg)
 ![LiteLLM](https://img.shields.io/badge/LiteLLM-0.11.0-green.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
 
-A robust setup for running Open WebUI with LiteLLM as a backend proxy, providing access to state-of-the-art AI models through a user-friendly interface. This project uses Docker Compose to orchestrate the services and includes comprehensive monitoring, security, and management features.
+An start at a robust setup for running Open WebUI with LiteLLM as a backend proxy, providing access to state-of-the-art AI models through a user-friendly interface. This project uses Docker Compose to orchestrate the services and includes a few validation, monitoring, security, and management features to experiment and secure your household AI use ...
 
 ## 🚀 Features
 
-- **Production-Ready**: Secure, robust configuration with proper error handling and logging
+- **(kind of) Production-Ready**: Secure, robust configuration with proper error handling and logging
 - **Multiple Model Providers**: Support for Anthropic, OpenAI, DeepSeek, Codestral, Groq, and OpenRouter
-- **Complete Monitoring**: Prometheus and Grafana integration for real-time metrics and dashboards
-- **User-Friendly Interface**: Intuitive UI for interacting with AI models via Open WebUI
-- **Centralized Management**: Single point of control for all model access and API keys
-- **Security-Focused**: Environment variable management, proper access controls, and credential protection
+- **Complete Monitoring of what has been accessed**: Prometheus and Grafana integration for real-time metrics and dashboards
+- **User-Friendly Interface**: Nice intuitive UI for interacting with AI models via Open WebUI
+- **Centralised Management**: Single point of control for all model access and API keys
+- **Security-Focused**: Environment variable management, proper access controls, and credential extraction
 - **Robust Database Backend**: PostgreSQL for request tracking, user management, and analytics
-- **Configurable Guardrails**: Optional content filtering and PII detection
+- **Configurable Guardrails**: Optional have go at content filtering and PII detection
 
 ## 📋 Prerequisites
 

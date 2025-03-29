@@ -16,7 +16,7 @@ litellm-proxy-openwebui/
 ├── IMPLEMENTATION_GUIDE.md  # This file
 ├── prometheus.yml           # Prometheus configuration
 ├── README.md                # Project documentation
-├── requirements-dev.txt     # Development dependencies
+├── requirements.txt         # Development dependencies
 └── scripts/
     └── entrypoint.sh        # Container entrypoint script
 └── validate_config.py       # Configuration validation script
@@ -59,7 +59,7 @@ Add the validation script:
 cp /path/to/enhanced/validate_config.py ./
 
 # Install development dependencies
-pip install -r requirements-dev.txt
+pip install -r requirements.txt
 
 # Run the validation
 python validate_config.py
