@@ -1,0 +1,250 @@
+model_list:
+  - model_name: Claude 3.7 Sonnet
+    litellm_params:
+      model: claude-3-7-sonnet-20250219
+      api_key: os.environ/ANTHROPIC_API_KEY
+      timeout: 120
+    model_info:
+      description: "Claude 3.7 Sonnet - Anthropic's advanced conversational and reasoning model"
+      context_length: 200000
+      pricing:
+        input_cost_per_token: 0.000015
+        output_cost_per_token: 0.000075
+      supported_features:
+        - streaming
+        - vision
+
+  - model_name: Claude 3.5 Sonnet
+    litellm_params:
+      model: claude-3-5-sonnet-20241022
+      api_key: os.environ/ANTHROPIC_API_KEY
+      timeout: 120
+    model_info:
+      description: "Claude 3.5 Sonnet - Powerful model balancing quality and speed"
+      context_length: 200000
+      pricing:
+        input_cost_per_token: 0.000003
+        output_cost_per_token: 0.000015
+      supported_features:
+        - streaming
+        - vision
+
+  - model_name: gpt-4o
+    litellm_params:
+      model: gpt-4o
+      api_key: os.environ/OPENAI_API_KEY
+      timeout: 120
+    model_info:
+      description: "GPT-4o - OpenAI's latest multimodal model"
+      context_length: 128000
+      pricing:
+        input_cost_per_token: 0.000005
+        output_cost_per_token: 0.000015
+      supported_features:
+        - streaming
+        - vision
+        - functions
+
+  - model_name: gpt-4o-mini
+    litellm_params:
+      model: gpt-4o-mini
+      api_key: os.environ/OPENAI_API_KEY
+      timeout: 120
+    model_info:
+      description: "GPT-4o Mini - Smaller, faster, and more cost-effective version of GPT-4o"
+      context_length: 128000
+      pricing:
+        input_cost_per_token: 0.000001
+        output_cost_per_token: 0.000003
+      supported_features:
+        - streaming
+        - vision
+        - functions
+
+  - model_name: (OpenRouter) Llama 3.1 405B Instruct
+    litellm_params:
+      model: openrouter/meta-llama/llama-3.1-405b-instruct
+      api_key: os.environ/OPENROUTER_API_KEY
+      drop_params: true
+      timeout: 180
+    model_info:
+      description: "Meta's 405B parameter Llama 3.1 model via OpenRouter"
+      context_length: 128000
+      pricing:
+        input_cost_per_token: 0.0000035
+        output_cost_per_token: 0.0000035
+      supported_features:
+        - streaming
+
+  - model_name: (OpenRouter) Llama 3.1 Sonar Large Online
+    litellm_params:
+      model: openrouter/perplexity/llama-3.1-sonar-large-128k-online
+      api_key: os.environ/OPENROUTER_API_KEY
+      drop_params: true
+      timeout: 180
+    model_info:
+      description: "Perplexity's online-enhanced Llama 3.1 model via OpenRouter"
+      context_length: 128000
+      pricing:
+        input_cost_per_token: 0.000008
+        output_cost_per_token: 0.000015
+      supported_features:
+        - streaming
+        - online-search
+
+  - model_name: (Groq) Llama 3.1 70B
+    litellm_params:
+      model: groq/llama-3.1-70b-versatile
+      api_key: os.environ/GROQ_API_KEY
+      timeout: 60
+    model_info:
+      description: "Llama 3.1 70B on Groq's fast inference infrastructure"
+      context_length: 32768
+      pricing: 
+        input_cost_per_token: 0.0000002
+        output_cost_per_token: 0.0000002
+      supported_features:
+        - streaming
+
+  - model_name: (Groq) Llama 3.1 8B
+    litellm_params:
+      model: groq/llama-3.1-8b-instant
+      api_key: os.environ/GROQ_API_KEY
+      timeout: 30
+    model_info:
+      description: "Llama 3.1 8B on Groq's ultra-fast inference infrastructure"
+      context_length: 32768
+      pricing:
+        input_cost_per_token: 0.0000002
+        output_cost_per_token: 0.0000002
+      supported_features:
+        - streaming
+
+  - model_name: DeepSeek Coder
+    litellm_params:
+      model: deepseek/deepseek-coder
+      api_key: os.environ/DEEPSEEK_API_KEY
+      timeout: 120
+    model_info:
+      description: "DeepSeek Coder - Specialized for code generation and understanding"
+      context_length: 32768
+      supported_features:
+        - streaming
+        - code-completion
+
+  - model_name: DeepSeek Chat
+    litellm_params:
+      model: deepseek/deepseek-chat
+      api_key: os.environ/DEEPSEEK_API_KEY
+      timeout: 120
+    model_info:
+      description: "DeepSeek Chat - General purpose conversational model"
+      context_length: 32768
+      supported_features:
+        - streaming
+
+  - model_name: Codestral
+    litellm_params:
+      model: text-completion-codestral/codestral-latest
+      api_key: os.environ/CODESTRAL_API_KEY
+      timeout: 120
+    model_info:
+      description: "Codestral - Specialized model for code generation and technical tasks"
+      context_length: 32768
+      supported_features:
+        - streaming
+        - code-completion
+
+general_settings:
+  # Master key for API access control
+  master_key: os.environ/MASTER_KEY
+  
+  # Set cache settings
+  cache:
+    type: redis
+    host: ${REDIS_HOST:-redis}
+    port: ${REDIS_PORT:-6379}
+    password: ${REDIS_PASSWORD:-""}
+    ttl: 300  # Time to live in seconds
+  
+  # Configure routing behavior
+  routing_strategy: 
+    lowest_latency:
+      num_fallbacks: 2
+      allowed_fails: 2
+  
+  # Request/response logging
+  logging:
+    level: ${LOG_LEVEL:-info}
+    log_file: /app/logs/litellm.log
+    log_requests: true
+    log_responses: false
+    hide_api_keys: true
+    hide_prompt_details: false
+  
+  # Set default timeouts
+  default_api_request_timeout: 120
+  default_completion_timeout: 180
+  
+  # Rate limiting
+  rate_limiting:
+    enabled: true
+    rpm: ${RATE_LIMIT_RPM:-60}
+    
+  # Enable tracking
+  track_cost: true
+  track_performance: true
+  track_tokens: true
+
+# Uncomment to enable guardrails
+guardrails:
+  - guardrail_name: "presidio-pre-guard"
+    litellm_params:
+      guardrail: presidio
+      mode: "pre_call"
+      output_parse_pii: True
+      pii_safe_response: "I detected sensitive information in your request. Please avoid sharing personal identifiable information."
+
+# Database settings
+database_settings:
+  url: ${DATABASE_URL:-postgresql://llmproxy:${DB_PASSWORD}@db:5432/litellm}
+  max_connections: 10
+  pool_timeout: 30
+  pool_recycle: 1800
+
+# Proxy server settings
+litellm_settings:
+  drop_params: true
+  num_retries: 3
+  retry_after: 1
+  max_tokens: null
+  telemetry: true
+  streaming_supported_models: all
+  default_fallback_strategy: "latency"
+  allowed_origins: ["http://localhost:3000", "https://your-production-domain.com"]
+  
+  # Prometheus metrics
+  prometheus_metrics: true
+
+# Custom headers for specific providers
+headers:
+  anthropic:
+    anthropic-version: "2023-06-01"
+  openai:
+    user-agent: "LiteLLM/Proxy"
+
+# Environment-specific settings
+environments:
+  production:
+    port: 4000
+    host: "0.0.0.0"
+    detailed_debug: false
+    num_workers: 4
+    cors_origins: ["https://your-production-domain.com"]
+    
+  development:
+    port: 4000
+    host: "0.0.0.0"
+    detailed_debug: true
+    num_workers: 1
+    cors_origins: ["*"]
