@@ -1,13 +1,17 @@
-# More complex Rpi4+ bootstrap of an extended LiteLLM Proxy and the Open WebUI
-## --plus some hardening & prompt metrics + Guardrails
+# RPi Open LLM API Gateway for Home and leisure
 
-## Home and leisure - Enterprise LLM API Gateway for Home and soho Use
-### If it all seems too complex - try my simpler Bootstrap version
+
+## Semi Advanced LiteLLM Proxy with Open WebUI chat front end Docker Based Builder 
+
+### Includes hardening, optimisation, validation, prompt reporting, analytics + Guardrails
+
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Docker](https://img.shields.io/badge/docker-powered-blue.svg)
 ![LiteLLM](https://img.shields.io/badge/LiteLLM-0.11.0-green.svg)
 ![Python](https://img.shields.io/badge/python-3.9%2B-blue)
+
+> _If it all seems too complex - try my simpler  [Bootstrap](Https://github.com/j3brns/litellm-openwebui-bootstrap)_
 
 An start at a robust setup for running Open WebUI with LiteLLM as a backend proxy, providing access to state-of-the-art AI models through a user-friendly interface. This project uses Docker Compose to orchestrate the services and includes a few validation, monitoring, security, and management features to experiment and secure your household AI use ...
 
