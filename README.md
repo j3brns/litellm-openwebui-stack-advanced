@@ -15,6 +15,8 @@
 
 An start at a robust setup for running Open WebUI with LiteLLM as a backend proxy, providing access to state-of-the-art AI models through a user-friendly interface. This project uses Docker Compose to orchestrate the services and includes a few validation, monitoring, security, and management features to experiment and secure your household AI use ...
 
+![alt text](gui.png)
+
 ## 🚀 Features
 
 - **(kind of) Production-Ready**: Secure, robust configuration with proper error handling and logging
