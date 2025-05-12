@@ -1,3 +1,5 @@
+!EXPRIMENTAL!
+
 # Open LLM API Gateway and private GUI for Home and leisure
 
 ## Semi Advanced LiteLLM Proxy with Open WebUI and Docker Based Builder -for RPi
